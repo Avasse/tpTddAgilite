@@ -1,4 +1,8 @@
-const expect = require('chai').expect;
+const mocha = require('mocha')
+const chai = require('chai')
+
+const describe = mocha.describe
+const expect = chai.expect
 
 const { hello } = require('../../routes/greeting');
 
@@ -16,8 +20,8 @@ let res = {
 describe('Greetings Route', function() {
   describe('Hello() function', function() {
     it('Should error out if no name provided ', function() {
-      hello(req, res);
-      expect(res.sendCalledWith).to.contain('error');
+      hello(req, res)
+      expect(res.sendCalledWith).to.contain('error')
     });
   })
 });
